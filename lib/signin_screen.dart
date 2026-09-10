@@ -96,8 +96,7 @@ title: Icon(
           child: Column(
             
             children: [
-               Text(messag
-               e),
+               Text(message),
               Text("Create your Account",style: 
               TextStyle(
                 color: Colors.white,
