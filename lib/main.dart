@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:protesting/lec2parr.dart';
 import 'package:protesting/mail.dart';
+import 'package:protesting/signin_screen.dart';
 
 import 'package:protesting/login_Screen.dart';
 void main() {
@@ -17,7 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:  LoginScreen(),
-    );
+      home:  signin_Screen()  ,
+        );
   }
+
+ 
+
 }

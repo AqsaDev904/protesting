@@ -8,17 +8,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  // user sa text lena ka liya han 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+// message store kr liya ha
   static const String savedEmail = "aqsaydost@gmail.com";
   static const String savedpass = "aqsa@786";
   String message = "";
-
+// console ma user ki input printkrta ha
   void login() {
     print("email: '${emailController.text}'");
     print("pass: '${passwordController.text}'");
-
+// agr begir kuch likha email pr pres kiya ha
     if (emailController.text.isEmpty) {
       setState(() {
         message = "email required!";
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
       });
       return;
     }
-
+// space khtm kr dy ga
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
 
@@ -44,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() {
         message = "invalid credentials";
       });
-    }1
+    }
 
     print("entered email: '$email'");
     print("saved email: '$savedEmail'");
