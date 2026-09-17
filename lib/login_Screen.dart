@@ -15,14 +15,27 @@ class _LoginScreenState extends State<LoginScreen> {
   static const String savedEmail = "aqsaydost@gmail.com";
   static const String savedpass = "aqsa@786";
   String message = "";
+
+ bool isloading = false;
+
+
+
+
+
 // console ma user ki input printkrta ha
-  void login() {
+  Future<void> login() async{
+    setState(() {
+      isloading = true;
+    });
+ await Future.delayed(Duration(seconds: 1));  
+
     print("email: '${emailController.text}'");
     print("pass: '${passwordController.text}'");
 // agr begir kuch likha email pr pres kiya ha
     if (emailController.text.isEmpty) {
       setState(() {
         message = "email required!";
+        isloading = false;
       });
       return;
     }
@@ -30,20 +43,23 @@ class _LoginScreenState extends State<LoginScreen> {
     if (passwordController.text.isEmpty) {
       setState(() {
         message = "password required!";
+         isloading = false;
       });
       return;
     }
-// space khtm kr dy ga
+// space khtm kr dy ga or yahan variable b create kiya han 
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
 
     if (email == savedEmail && password == savedpass) {
       setState(() {
         message = "Login successfully";
+         isloading = false;
       });
     } else {
       setState(() {
         message = "invalid credentials";
+         isloading = false;
       });
     }
 
@@ -51,6 +67,13 @@ class _LoginScreenState extends State<LoginScreen> {
     print("saved email: '$savedEmail'");
     print("entered pass: '$password'");
     print("saved pass: '$savedpass'");
+
+// clear
+
+emailController.clear();
+passwordController.clear();
+
+
   }
 
   @override
@@ -163,6 +186,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(height: 40),
+
+                      isloading == true ? 
+               CircularProgressIndicator(color: Colors.amber,)
+              :
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color.fromARGB(
