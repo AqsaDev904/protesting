@@ -5,7 +5,6 @@
 // * Create two different Car objects (e.g., a Tesla and a Toyota).
 // * Call displayDetails() for both.
 
-import 'dart:nativewrappers/_internal/vm/lib/ffi_native_type_patch.dart';
 
 //  bank account 
 
