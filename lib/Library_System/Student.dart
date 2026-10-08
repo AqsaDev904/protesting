@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
-class Student extends StatelessWidget {
+class Student extends StatefulWidget {
   const Student({super.key});
+
+  @override
+  State<Student> createState() => _StudentState();
+}
+
+class _StudentState extends State<Student> {
+  final nameController = TextEditingController();
+final emailController = TextEditingController();
+final phoneController = TextEditingController();
+final departmentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +47,7 @@ body: Center(
    
       children: [
         TextField(
+          controller: nameController,
     decoration: InputDecoration(
       
       icon: Icon(Icons.person,color: Colors.purple,),
@@ -48,6 +59,8 @@ body: Center(
         ),
         SizedBox(height: 20,),
           TextField(
+            controller: emailController,
+
     decoration: InputDecoration(
       
       icon: Icon(Icons.email,color: Colors.purple,),
@@ -59,6 +72,8 @@ body: Center(
         ),
         SizedBox(height: 20,),
           TextField(
+            controller: phoneController,
+
     decoration: InputDecoration(
       
       icon: Icon(Icons.call,color: Colors.purple,),
@@ -70,6 +85,8 @@ body: Center(
         ),
         SizedBox(height: 20,),
           TextField(
+            controller: departmentController,
+
     decoration: InputDecoration(
       
       icon: Icon(Icons.local_fire_department,color: Colors.purple,),
@@ -90,6 +107,7 @@ body: Center(
                    builder: (context){
               return AlertDialog(
               title: Text("add student"),
+              
               content: Container(
                 width: 200,
                 height: 300,
@@ -97,11 +115,14 @@ body: Center(
                  
                   children: [
                     TextField(
+                      controller: nameController,
+
                       decoration: InputDecoration(
                 labelText: "Name",
                       ),
                     ),
                       TextField(
+                        controller: emailController,
                       decoration: InputDecoration(
                 labelText: "Email",
                       ),
@@ -112,6 +133,8 @@ body: Center(
                       ),
                     ),
                       TextField(
+                        controller: departmentController,
+
                       decoration: InputDecoration(
                 labelText: "Department",
                       ),
@@ -185,3 +208,6 @@ body: Center(
 
   }
 }
+
+
+

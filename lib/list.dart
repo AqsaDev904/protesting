@@ -1,15 +1,31 @@
-// 1 Create a list of five numbers.
-void main(){
-List<int> numbers = [1, 3, 4, 5, 7];
+class Name {
+  List<String> names = [
+    "Aqsa",
+    "Ali",
+    "Ayesha",
+    "Ahmed",
+    "Sara"
+  ];
 
-// 2 Add two more numbers to the list.
-numbers.add(2);
-numbers.add(8);
-numbers.remove(23);
+  void addname() {
+    names.remove("Ahmed");
+    names.insert(0, "zara");
+    names[1] = "hina";
+  }
 
+  void printname() {
+    for (String n in names) {
+      if (n[0] == "A") {
+        print(n);
+      }
+    }
+  }
+}
 
-print(numbers.first);
-print(numbers.last);
- (numbers.sort);
- print(numbers);
+void main() {
+  Name n2 = Name();
+
+  n2.addname();
+  print(n2.names[1]);
+  n2.printname();
 }
