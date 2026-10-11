@@ -1,38 +1,20 @@
-// void intro(String name ,[int ? age]){
-//   print("name : $name");
-// }
-// void main(){
-//   intro("aqsa");
-// }
-// named parameter sa student info
-// void info({
-// String ? name , 
-// int ? age ,
-// String  ? department,
-// }){
-//   print(" name is $name");
-//   print("age is $age");
-//   print(" name is $department");
-// }
-// void main(){
-// info(
-//   name : "aqsa",
-//   age  : 12,
-//     department:   "It",
-//   );
-// }
-// multiply do nmbr with lambhda
-// void main() {
+class Students {
+  Map<String, int> marks = {
+    "aqsa": 12,
+    "ALi": 122,
+    "sarmad": 112,
+  };
 
-//   var multiply = (int a, int b) 
-//    =>a * b;
-   
+  Map<String, int> get result {
+    return marks.map((name, mark) {
+      return MapEntry(name, mark * 2);
+    });
+  }
+}
 
-//   print(multiply(5, 4));
-// }
-void main(){
-List <String> name = ["aqsa" , "sara" , "nimra"];
- name.forEach((name) {
-    print(name);
-  });
+void main() {
+  Students s1 = Students();
+
+  print(s1.marks);
+  print(s1.result);
 }

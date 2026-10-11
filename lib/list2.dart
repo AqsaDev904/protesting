@@ -1,62 +1,33 @@
-// void main(){
-// List<int> numbers = [12,23,34,34,2];
-// numbers.forEach((num){
-//   print(num);
-// });
-// }
+import 'package:protesting/lec1par.dart';
 
+class Student {
+  String name  = "";
+  int age  = 0 ;
+  String course = "";
 
-//  map list
-
-// void main(){
-// List<int> numbers = [12, 43 ,4 , 3 , 43];
-// var newnmbr = numbers.map((num)
-// {
-//   return num*6;
-
-// }
-// ).toList();
-// print(numbers);
-// print(newnmbr);
-// }
-
-
-// where ka use
-
-
-
-
-// void main(){
-// List numbers = [1,2,3,4,5];
-
-// var result = numbers.where((num){
-//   return num>3;
-
-// }
-
-// ).toList();
-// print(result);
-// }
-
-// Map
-
-
-
-// how to create Map
-Map<String , int> user = {
- "name": 23,
-"age" : 12,
-};
-
-
-// How to use different type
-void main(){
-Map <String , dynamic>  product ={
-  "name" : "laptop",
-  "price" : 20000,
-
-
-};
-print(product);
+  Student({
+required this.name,
+required this.age,
+required this.course,
+  }
+  );
+}
+List  <Student>  students = [
+Student(name: "aqsa", age: 21, course: "IT"),
+Student(name: "AZKA", age: 21, course: "MATH"),
+Student(name: "ANAMA", age: 21, course: "IT"),
+];
+void filterlist(){
+List <Student> result = 
+students.where((m)=>m.course=="IT").toList();
+print(result);
+for(Student n in result){
+  print(n.name);
+}
 }
 
+
+
+void main(){
+filterlist();
+}
